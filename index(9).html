@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f6">
+  <meta name="description" content="Agenzia Immobiliare Morinotto — dal 1970. Contatta l'agenzia, scopri il sito e raggiungici a Lido di Camaiore.">
+  <title>Morinotto | Agenzia Immobiliare dal 1970</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202226;
+      --muted: #6f7379;
+      --silver: #aeb3b8;
+      --line: #e5e6e7;
+      --paper: #f7f7f6;
+      --white: #fff;
+      --shadow: 0 22px 60px rgba(23, 26, 30, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--ink);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(185,190,195,.18), transparent 42%),
+        var(--paper);
+      font-family: "DM Sans", sans-serif;
+      display: flex; justify-content: center; padding: 26px 16px 34px;
+    }
+    .page { width: 100%; max-width: 430px; }
+    .card {
+      position: relative; overflow: hidden; background: var(--white);
+      border: 1px solid rgba(120,125,130,.18); border-radius: 28px;
+      box-shadow: var(--shadow); padding: 30px 23px 25px;
+    }
+    .topline {
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      color: #777c82; font-size: 10px; letter-spacing: .24em; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .topline::before, .topline::after {
+      content: ""; height: 1px; width: 28px; background: linear-gradient(90deg, transparent, #b7bbc0);
+    }
+    .topline::after { transform: rotate(180deg); }
+    .logo-wrap {
+      display: flex; justify-content: center; align-items: center;
+      min-height: 128px; padding: 0 0 15px;
+    }
+    .logo { display: block; width: 100%; max-width: 330px; height: auto; object-fit: contain; }
+    .fallback-logo { display: none; text-align: center; font-family: "Manrope", sans-serif; }
+    .fallback-logo .name { font-size: clamp(36px, 11vw, 48px); font-weight: 600; letter-spacing: -.065em; }
+    .fallback-logo .sub { font-size: 13px; color: #777c82; letter-spacing: .18em; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, #c6c9cc, transparent); margin: 4px 0 23px; }
+    .eyebrow { text-align: center; text-transform: uppercase; color: #777c82; font-size: 10px; letter-spacing: .25em; margin: 0 0 9px; }
+    h1 {
+      font-family: "Manrope", sans-serif; text-align: center; font-size: 22px;
+      line-height: 1.25; letter-spacing: -.045em; font-weight: 600;
+      margin: 0 auto; max-width: 330px;
+    }
+    .owners { text-align: center; margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .since { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 22px 0 24px; }
+    .since-line { height: 1px; width: 27px; background: #c6c9cc; }
+    .since span { font-size: 11px; text-transform: uppercase; letter-spacing: .22em; color: #555a60; }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .action {
+      min-height: 55px; padding: 12px 13px; display: flex; align-items: center; justify-content: center; gap: 10px;
+      text-decoration: none; border-radius: 14px; border: 1px solid var(--line);
+      color: var(--ink); background: #fff; font-size: 13px; font-weight: 600;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .action:hover { transform: translateY(-2px); border-color: #b7bbc0; box-shadow: 0 8px 18px rgba(20,25,30,.06); }
+    .action.primary { grid-column: 1 / -1; background: #25282c; color: white; border-color: #25282c; min-height: 59px; }
+    .action svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .section-label { display: flex; align-items: center; gap: 12px; color: #888d92; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; margin: 27px 0 13px; }
+    .section-label::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+    .socials { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .social {
+      display: flex; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 14px;
+      background: #fafafa; border: 1px solid #eeeeef; color: var(--ink); text-decoration: none;
+      font-size: 12px; font-weight: 600;
+    }
+    .social svg { width: 18px; height: 18px; color: #666b70; }
+    .website {
+      margin-top: 10px; padding: 16px; border-radius: 15px; background: #f4f4f3;
+      text-decoration: none; color: var(--ink); display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; font-weight: 600;
+    }
+    .website small { display: block; color: var(--muted); font-size: 10px; font-weight: 400; margin-bottom: 4px; letter-spacing: .06em; }
+    .arrow { font-size: 20px; color: #74797e; }
+    .footer { text-align: center; padding: 21px 12px 0; color: #969a9f; font-size: 10px; letter-spacing: .1em; }
+    .footer strong { display: block; color: #74797e; font-size: 10px; font-weight: 600; margin-bottom: 5px; letter-spacing: .18em; }
+    @media (max-width: 360px) {
+      body { padding: 12px 9px 20px; }
+      .card { padding: 24px 16px 21px; border-radius: 23px; }
+      .action { font-size: 12px; gap: 7px; padding: 11px 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-label="Biglietto da visita digitale Agenzia Immobiliare Morinotto">
+      <div class="topline">Il tuo riferimento immobiliare</div>
+      <div class="logo-wrap">
+        <img class="logo" src="logo-morinotto.jpg" alt="Morinotto Agenzia Immobiliare" onerror="this.style.display='none';document.querySelector('.fallback-logo').style.display='block'">
+        <div class="fallback-logo"><div class="name">morinotto</div><div class="sub">agenzia immobiliare</div></div>
+      </div>
+      <div class="divider"></div>
+      <p class="eyebrow">Agenzia immobiliare</p>
+      <h1>Agenzia Immobiliare Morinotto</h1>
+      <p class="owners">SNC di Simone e Ettore Giannecchini</p>
+      <div class="since"><span class="since-line"></span><span>Dal 1970</span><span class="since-line"></span></div>
+
+      <div class="actions">
+        <a class="action primary" href="https://wa.me/393475064998" target="_blank" rel="noopener noreferrer" aria-label="Scrivi su WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 11.8a8.2 8.2 0 0 1-12.1 7.2L3 20l1.1-4.9a8.2 8.2 0 1 1 16.1-3.3Z"/><path d="M8.5 8.1c.2-.5.5-.5.8-.5h.4c.2 0 .3.1.4.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.3 0 .6.5.9 1.3 1.6 2.2 2.1.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.2.4.4 0 .3-.2 1.1-.7 1.5-.5.4-1.2.6-1.8.4-1.1-.3-2.5-1-3.7-2.2-1.3-1.2-2-2.7-2.2-3.6-.2-.6 0-1.2.7-1.6Z"/></svg>
+          Scrivi su WhatsApp
+        </a>
+        <a class="action" href="tel:+390584784403">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.5v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.7 2 2 0 0 1 3.1 1.5h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.9L6.7 9.4a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 1.9-.6l3 .5a2 2 0 0 1 2.1 2.5Z"/></svg>
+          Chiama
+        </a>
+        <a class="action" href="mailto:info@morinotto.it">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+          Email
+        </a>
+      </div>
+
+      <div class="section-label">Scopri Morinotto</div>
+      <div class="socials">
+        <a class="social" href="https://www.instagram.com/agenzia.morinotto?dlrf=bm04a2h0cXU4eTVw" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+          Instagram
+        </a>
+        <a class="social" href="https://maps.app.goo.gl/SG3HMoe6oSYpjNfQ8?g_st=ic" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Come raggiungerci
+        </a>
+      </div>
+      <a class="website" href="https://www.morinotto.it/" target="_blank" rel="noopener noreferrer">
+        <span><small>VISITA IL NOSTRO SITO</small>morinotto.it</span><span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </section>
+    <footer class="footer"><strong>MORINOTTO</strong>Esperienza immobiliare dal 1970</footer>
+  </main>
+</body>
+</html>
